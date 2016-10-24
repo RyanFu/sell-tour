@@ -1,0 +1,7 @@
+{
+  "name": "tour",
+  "version": "0.1.0",
+  "dependencies": {
+    "AdminLTE": "admin-lte#^2.3.6"
+  }
+}
