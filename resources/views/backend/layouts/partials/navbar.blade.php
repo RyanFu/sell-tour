@@ -101,6 +101,9 @@
       </div>
     </nav>
   </header>
+
+
+
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
@@ -118,9 +121,9 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
         <li class="treeview">
-          <a href="#">
+          <a href="{{ url('/tour') }}">
             <i class="fa fa-files-o"></i>
-            <span>Layout Options</span>
+            <span>{{ trans('lang_admin.tour_menu_admin') }}</span>
             <span class="pull-right-container">
               <span class="label label-primary pull-right">4</span>
             </span>
