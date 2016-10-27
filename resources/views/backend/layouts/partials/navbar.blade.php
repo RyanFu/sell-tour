@@ -2,9 +2,9 @@
     <!-- Logo -->
     <a href="#" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini">{{ trans('lang_admin.f') }}<b></b>{{ trans('lang_admin.ood') }}</span>
+      <span class="logo-mini">{{ trans('lang_admin.s') }}<b></b>{{ trans('lang_admin.ell') }}</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>{{ trans('lang_admin.sharing') }}</b>{{ trans('lang_admin.food') }}</span>
+      <span class="logo-lg"><b>{{ trans('lang_admin.sell-tour') }}</b></span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -101,9 +101,6 @@
       </div>
     </nav>
   </header>
-
-
-
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
@@ -121,9 +118,9 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
         <li class="treeview">
-          <a href="{{ url('/tour') }}">
+          <a href="#">
             <i class="fa fa-files-o"></i>
-            <span>{{ trans('lang_admin.tour_menu_admin') }}</span>
+            <span>Layout Options</span>
             <span class="pull-right-container">
               <span class="label label-primary pull-right">4</span>
             </span>
@@ -136,8 +133,8 @@
           </ul>
         </li>
         <li>
-          <a href="pages/widgets.html">
-            <i class="fa fa-th"></i> <span>Widgets</span>
+          <a href="{{ route('admin.tour.index') }}">
+            <i class="fa fa-th"></i> <span>Tour</span>
             <span class="pull-right-container">
               <small class="label pull-right bg-green">new</small>
             </span>

@@ -3,11 +3,15 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Prettus\Repository\Contracts\Transformable;
+use Prettus\Repository\Traits\TransformableTrait;
 use Cviebrock\EloquentSluggable\Sluggable;
 
-class Food extends Model
+class Food extends Model implements Transformable
 {
-	use Sluggable;
+    use TransformableTrait;
+
+    use Sluggable;
 	protected $table = 'foods';
     public function places()
     {
@@ -22,4 +26,5 @@ class Food extends Model
             ]
         ];
     }
+
 }

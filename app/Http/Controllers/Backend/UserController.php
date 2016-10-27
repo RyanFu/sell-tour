@@ -6,23 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Repositories\Eloquent\TourRepositoryEloquent;
-use Exception;
-use Session;
-class TourController extends Controller
+
+class UserController extends Controller
 {
-    protected $tourrepo;
-    /**
-     * Create a new authentication controller instance.
-     *
-     * @param TourRepositoryEloquent       $tour      the tour repository
-     *
-     * @return void
-     */
-    public function __construct(TourRepositoryEloquent $tour)
-    {
-        $this->tourrepo = $tour;
-    }
     /**
      * Display a listing of the resource.
      *
@@ -30,8 +16,7 @@ class TourController extends Controller
      */
     public function index()
     {
-        $tours=$this->tourrepo->all();
-        return view('backend.tours.index',compact('tours'));
+        //
     }
 
     /**

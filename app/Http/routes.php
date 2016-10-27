@@ -11,8 +11,10 @@
 |
 */
 
-Route::group([ 'prefix' => 'admin' ], function () {
-	Route::group([ 'namespace' => 'Backend' ], function () {
+Route::group(['prefix' => 'admin','namespace' => 'Backend' ], function () {
 		Route::resource('tour', 'TourController');
-	});
+		Route::resource('user', 'UserController');
+});
+Route::get('/', function(){
+	return view('backend.layouts.master');
 });

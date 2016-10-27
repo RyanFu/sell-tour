@@ -3,10 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Prettus\Repository\Contracts\Transformable;
+use Prettus\Repository\Traits\TransformableTrait;
 
-class Place extends Model
+class Place extends Model implements Transformable
 {
-	protected $table = 'places';
+    use TransformableTrait;
+
+    protected $table = 'places';
     public function tours(){
     	return $this->hasMany('App\Tour');
     }
@@ -26,4 +30,5 @@ class Place extends Model
     public function experiences(){
     	return $this->morphedByMany('App\New', 'placeable');
     }
+
 }
