@@ -3,11 +3,15 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Prettus\Repository\Contracts\Transformable;
+use Prettus\Repository\Traits\TransformableTrait;
 use Cviebrock\EloquentSluggable\Sluggable;
 
-class Rent extends Model
+class Rent extends Model implements Transformable
 {
-	use Sluggable;
+    use TransformableTrait;
+
+    use Sluggable;
     protected $table = 'rents';
 
     public function sluggable()
@@ -18,4 +22,5 @@ class Rent extends Model
             ]
         ];
     }
+
 }

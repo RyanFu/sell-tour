@@ -3,11 +3,15 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Prettus\Repository\Contracts\Transformable;
+use Prettus\Repository\Traits\TransformableTrait;
 use Cviebrock\EloquentSluggable\Sluggable;
 
-class Tour extends Model
+class Tour extends Model implements Transformable
 {
-	use Sluggable;
+    use TransformableTrait;
+
+    use Sluggable;
 	protected $table = 'tours';
     public function place(){
     	return $this->belongsTo('App\Place');
@@ -21,4 +25,5 @@ class Tour extends Model
             ]
         ];
     }
+
 }
