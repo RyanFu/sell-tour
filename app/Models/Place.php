@@ -27,8 +27,4 @@ class Place extends Model implements Transformable
     	return $this->morphedByMany('App\Food', 'placeable');
     }
 
-    public function experiences(){
-    	return $this->morphedByMany('App\New', 'placeable');
-    }
-
 }

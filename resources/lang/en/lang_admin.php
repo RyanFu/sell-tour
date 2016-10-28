@@ -26,6 +26,7 @@
 			'title_manage_tour' => ' - Quản lý tour du lich',
 			'tour_list' => 'Danh sách tour',
 			'add_tour' => 'Thêm mới',
+			'title_add_tour' => 'Thêm mới tour du lịch',
 			'no' => 'No',
 			'name' => 'Name:',
 			'price' => 'Price:',
