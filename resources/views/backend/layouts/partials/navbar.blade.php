@@ -133,8 +133,48 @@
           </ul>
         </li>
         <li>
-          <a href="{{ route('admin.tour.index') }}">
+          <a href="{{ route('admin.tours.index') }}">
             <i class="fa fa-th"></i> <span>Tour</span>
+            <span class="pull-right-container">
+              <small class="label pull-right bg-green">new</small>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="{{ route('admin.experience.index') }}">
+            <i class="fa fa-th"></i> <span>Kinh nghiệm du lịch</span>
+            <span class="pull-right-container">
+              <small class="label pull-right bg-green">new</small>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="{{ route('admin.hotel.index') }}">
+            <i class="fa fa-th"></i> <span>Khách sạn</span>
+            <span class="pull-right-container">
+              <small class="label pull-right bg-green">new</small>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="{{ route('admin.food.index') }}">
+            <i class="fa fa-th"></i> <span>Ẩm thực</span>
+            <span class="pull-right-container">
+              <small class="label pull-right bg-green">new</small>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="{{ route('admin.rent.index') }}">
+            <i class="fa fa-th"></i> <span>Xe du lịch</span>
+            <span class="pull-right-container">
+              <small class="label pull-right bg-green">new</small>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="{{ route('admin.news.index') }}">
+            <i class="fa fa-th"></i> <span>Tin tức</span>
             <span class="pull-right-container">
               <small class="label pull-right bg-green">new</small>
             </span>

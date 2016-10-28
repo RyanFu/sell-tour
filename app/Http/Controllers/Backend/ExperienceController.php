@@ -10,12 +10,10 @@ use App\Repositories\Eloquent\TourRepositoryEloquent;
 use Exception;
 use Session;
 
-use App\Models\Category;
-use App\Models\Place;
 
-class TourController extends Controller
+class ExperienceController extends Controller
 {
-    protected $tourrepo;
+    protected $experiencerepo;
     /**
      * Create a new authentication controller instance.
      *
@@ -23,9 +21,9 @@ class TourController extends Controller
      *
      * @return void
      */
-    public function __construct(TourRepositoryEloquent $tour)
+    public function __construct(ExperienceRepositoryEloquent $experience)
     {
-        $this->tourrepo = $tour;
+        $this->experiencerepo = $experience;
     }
     /**
      * Display a listing of the resource.
@@ -34,8 +32,8 @@ class TourController extends Controller
      */
     public function index()
     {
-        $tours=$this->tourrepo->all();
-        return view('backend.tours.index',compact('tours'));
+        $experiences=$this->experiencerepo->all();
+        return view('backend.experience.index',compact('experiences'));
     }
 
     /**
@@ -47,7 +45,7 @@ class TourController extends Controller
     {
         $categories = Category::all();
         $places = Place::all();
-        return view('backend.tours.create', compact('categories', 'places'));
+        return view('backend.experience.create', compact('categories', 'places'));
     }
 
     /**
@@ -69,7 +67,7 @@ class TourController extends Controller
      */
     public function show($id)
     {
-        return view('backend.tours.show');
+        return view('backend.experience.show');
     }
 
     /**
@@ -82,7 +80,7 @@ class TourController extends Controller
     {
         $categories = Category::all();
         $places = Place::all();
-        return view('backend.tours.edit', compact('categories', 'places'));
+        return view('backend.experience.edit', compact('categories', 'places'));
     }
 
     /**
