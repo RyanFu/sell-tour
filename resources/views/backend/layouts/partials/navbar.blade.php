@@ -133,7 +133,7 @@
           </ul>
         </li>
         <li>
-          <a href="{{ route('admin.tours.index') }}">
+          <a href="{{ route('admin.tour.index') }}">
             <i class="fa fa-th"></i> <span>Tour</span>
             <span class="pull-right-container">
               <small class="label pull-right bg-green">new</small>
