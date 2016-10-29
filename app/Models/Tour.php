@@ -14,7 +14,7 @@ class Tour extends Model implements Transformable
     use Sluggable;
 	protected $table = 'tours';
     public function place(){
-    	return $this->belongsTo('App\Place');
+    	return $this->belongsTo('App\Models\Place');
     }
 
     public function sluggable()

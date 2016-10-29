@@ -9,9 +9,11 @@ use App\Http\Controllers\Controller;
 use App\Repositories\Eloquent\TourRepositoryEloquent;
 use Exception;
 use Session;
+use Validator;
 
 use App\Models\Category;
 use App\Models\Place;
+use App\Models\Tour;
 
 class TourController extends Controller
 {
@@ -58,7 +60,35 @@ class TourController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'price' => 'required'
+            //'meta-keywords' => 'required',
+            //'meta-descriptions' => 'required'
+        ], [
+            'name.required' => 'Bạn phải nhập tên tour',
+            'price.required' => 'Bạn phải nhập giá cho tour'
+            //'meta-keywords.required' => 'Bạn phải nhập SEO keywords cho tour',
+            //'meta-décriptions.required' => 'Bạn phải nhập SEO descriptions cho tour'
+        ]);
+
+        if($validator->fails()){
+            return redirect('/admin/tour/create')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        $place = Place::find($request->get('place'));
+        $tour = new Tour();
+        $tour->name = $request->get('name');
+        $tour->price = $request->get('price');
+        $tour->meta_keywords = $request->get('meta-keywords');
+        $tour->meta_description = $request->get('meta-descriptions');
+        $tour->save();
+        
+        return redirect('/admin/tour')
+                    ->with(array('success' => 'Thêm mới thành công'))
+                    ->withInput();
     }
 
     /**
@@ -82,7 +112,8 @@ class TourController extends Controller
     {
         $categories = Category::all();
         $places = Place::all();
-        return view('backend.tours.edit', compact('categories', 'places'));
+        $tour = Tour::find($id);
+        return view('backend.tours.edit', compact('categories', 'places', 'tour'));
     }
 
     /**
@@ -94,7 +125,28 @@ class TourController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'price' => 'required'
+            //'meta-keywords' => 'required',
+            //'meta-descriptions' => 'required'
+        ], [
+            'name.required' => 'Bạn phải nhập tên tour',
+            'price.required' => 'Bạn phải nhập giá cho tour'
+            //'meta-keywords.required' => 'Bạn phải nhập SEO keywords cho tour',
+            //'meta-décriptions.required' => 'Bạn phải nhập SEO descriptions cho tour'
+        ]);
+
+        if($validator->fails()){
+            return redirect('/admin/tour/create')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        $tour = $this->tourrepo->update($request->all(), $id);
+        return redirect('/admin/tour')
+                    ->with(array('success' => 'Cập nhật thành công'))
+                    ->withInput();
     }
 
     /**
@@ -105,6 +157,9 @@ class TourController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $this->tourrepo->delete($id);
+        return redirect('/admin/tour')
+                    ->with(array('success' => 'Xóa tour thành công'))
+                    ->withInput();
     }
 }

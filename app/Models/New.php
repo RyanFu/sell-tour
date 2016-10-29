@@ -15,7 +15,7 @@ class New extends Model implements Transformable
 	protected $table = 'news';
     public function places()
     {
-        return $this->morphToMany('App\Place', 'placeable');
+        return $this->morphToMany('App\Models\Place', 'placeable');
     }
 
     public function sluggable()

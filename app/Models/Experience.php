@@ -17,7 +17,7 @@ class Experience extends Model implements Transformable
 
     public function places()
     {
-        return $this->morphToMany('App\Place', 'placeable');
+        return $this->morphToMany('App\Models\Place', 'placeable');
     }
 
     public function sluggable()
