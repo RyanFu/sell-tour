@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Repositories\Eloquent\TourRepositoryEloquent;
+use App\Repositories\Eloquent\ExperienceRepositoryEloquent;
 use Exception;
 use Session;
 
@@ -17,7 +17,7 @@ class ExperienceController extends Controller
     /**
      * Create a new authentication controller instance.
      *
-     * @param TourRepositoryEloquent       $tour      the tour repository
+     * @param ExperienceRepositoryEloquent       $experience      the tour repository
      *
      * @return void
      */
