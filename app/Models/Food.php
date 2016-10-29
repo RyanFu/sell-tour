@@ -15,7 +15,7 @@ class Food extends Model implements Transformable
 	protected $table = 'foods';
     public function places()
     {
-        return $this->morphToMany('App\Place', 'placeable');
+        return $this->morphToMany('App\Models\Place', 'placeable');
     }
 
     public function sluggable()
