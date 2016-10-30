@@ -10,7 +10,9 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
+Route::get('login', ['as' => 'login', 'uses' => 'Backend\AuthController@getLogin']);
+Route::post('login', ['uses' => 'Backend\AuthController@postLogin']);
+Route::get('logout',['as' => 'logout', 'uses' => 'Backend\AuthController@getLogout']);
 Route::group(['prefix' => 'admin','namespace' => 'Backend' ], function () {
 	Route::resource('tour', 'TourController');
 	Route::resource('food', 'FoodController');

@@ -20,6 +20,7 @@
 						
 						<div class="col-md-6">
 							<select name="category" id="category" class="form-control">
+								<option value="">Chọn tất cả</option>
 								@foreach($categories as $category)
 									<option value="{{ $category->id }}" {!! old('category') === $category->id ? 'selected=selected' : '' !!}>{{ $category->name }}</option>
 		    					@endforeach
