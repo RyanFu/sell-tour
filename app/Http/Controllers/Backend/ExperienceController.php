@@ -33,7 +33,7 @@ class ExperienceController extends Controller
     public function index()
     {
         $experiences=$this->experiencerepo->all();
-        return view('backend.experience.index',compact('experiences'));
+        return view('backend.experiences.index',compact('experiences'));
     }
 
     /**
@@ -45,7 +45,7 @@ class ExperienceController extends Controller
     {
         $categories = Category::all();
         $places = Place::all();
-        return view('backend.experience.create', compact('categories', 'places'));
+        return view('backend.experiences.create', compact('categories', 'places'));
     }
 
     /**
@@ -67,7 +67,7 @@ class ExperienceController extends Controller
      */
     public function show($id)
     {
-        return view('backend.experience.show');
+        return view('backend.experiences.show');
     }
 
     /**
@@ -80,7 +80,7 @@ class ExperienceController extends Controller
     {
         $categories = Category::all();
         $places = Place::all();
-        return view('backend.experience.edit', compact('categories', 'places'));
+        return view('backend.experiences.edit', compact('categories', 'places'));
     }
 
     /**
