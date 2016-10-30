@@ -8,7 +8,7 @@
 	<h2 class="text-left">&nbsp;{{trans('lang_admin.tour.add_tour')}}</h2><br>
     <div class="box box-success">
     	<div class="mg-top-20px">
-	    	<form action="{{ route('admin.tour.store') }}" method="post">
+	    	{!! Form::open(['route' => ['admin.tour.update', $tour->id], 'method' => 'PUT', 'class' => 'form-inline']) !!}
 	    		{{ csrf_field() }}
 				<div class="form-group">
 					<div class="row">
@@ -20,6 +20,7 @@
 						
 						<div class="col-md-6">
 							<select name="category" id="category" class="form-control">
+								<option value="">Chọn tất cả</option>
 								@foreach($categories as $category)
 									<option value="{{ $category->id }}" {!! old('category') === $category->id ? 'selected=selected' : '' !!}>{{ $category->name }}</option>
 		    					@endforeach
@@ -55,7 +56,7 @@
 						</div>
 						
 						<div class="col-md-6">
-							<input type="text" class="form-control" name="name"	id="name" value="{{ old('name') }}">
+							<input type="text" class="form-control" name="name"	id="name" value="{{ old('name', $tour->name) }}">
 						</div>
 					</div>
 				</div>
@@ -69,7 +70,7 @@
 						</div>
 						
 						<div class="col-md-6">
-							<input type="text" class="form-control" name="price" id="price" value="{{ old('price') }}">
+							<input type="text" class="form-control" name="price" id="price" value="{{ old('price', $tour->price) }}">
 						</div>
 					</div>
 				</div>
@@ -83,7 +84,7 @@
 						</div>
 						
 						<div class="col-md-6">
-							<textarea name="meta-keywords" rows="5" cols="73">{{ old('meta-keywords') }}</textarea>
+							<textarea name="meta-keywords" rows="5" cols="73">{{ old('meta-keywords', $tour->meta_keywords) }}</textarea>
 						</div>
 					</div>
 				</div>
@@ -97,7 +98,7 @@
 						</div>
 						
 						<div class="col-md-6">
-							<textarea name="meta-descriptions" rows="5" cols="73">{{ old('meta-descriptions') }}</textarea>
+							<textarea name="meta-descriptions" rows="5" cols="73">{{ old('meta-descriptions', $tour->meta_description) }}</textarea>
 						</div>
 					</div>
 				</div>
@@ -108,7 +109,7 @@
 						<input type="reset" value="Nhập lại" class="btn btn-danger mg-left-20px"> 
 					</div>
 				</div>
-	    	</form>
+	    	{!! Form::close() !!}
     	</div>
     </div>                      
 	

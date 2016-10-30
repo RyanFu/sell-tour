@@ -80,7 +80,7 @@ class TourController extends Controller
         $tour->price = $request->get('price');
         $tour->meta_keywords = $request->get('meta-keywords');
         $tour->meta_description = $request->get('meta-descriptions');
-        $tour->save();
+        $place->tours()->save($tour);
         
         return redirect('/admin/tour')
                     ->with(array('success' => 'Thêm mới thành công'))
