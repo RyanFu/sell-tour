@@ -12,7 +12,10 @@ class Hotel extends Model implements Transformable
     use TransformableTrait;
 
     use Sluggable;
-	protected $table = 'foods';
+	protected $table = 'hotels';
+    protected $fillable = [
+        'place_id' ,'name', 'price', 'address', 'rating', 'lat', 'lng',
+    ];
     public function place(){
     	return $this->belongsTo('App\Models\Place');
     }

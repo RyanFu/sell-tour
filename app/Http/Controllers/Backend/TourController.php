@@ -63,13 +63,9 @@ class TourController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required',
             'price' => 'required'
-            //'meta-keywords' => 'required',
-            //'meta-descriptions' => 'required'
         ], [
             'name.required' => 'Bạn phải nhập tên tour',
             'price.required' => 'Bạn phải nhập giá cho tour'
-            //'meta-keywords.required' => 'Bạn phải nhập SEO keywords cho tour',
-            //'meta-décriptions.required' => 'Bạn phải nhập SEO descriptions cho tour'
         ]);
 
         if($validator->fails()){
