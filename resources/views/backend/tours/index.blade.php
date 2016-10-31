@@ -13,9 +13,6 @@
                     <tr>
                         <th class="text-center">{!! trans('lang_admin.tour.no') !!}</th>
                         <th class="text-center">{!! trans('lang_admin.tour.name') !!}</th>
-                        <th class="text-center">{!! trans('lang_admin.tour.price') !!}</th>
-                        <th class="text-center">{!! trans('lang_admin.tour.date_start') !!}</th>
-                        <th class="text-center">{!! trans('lang_admin.tour.date_end') !!}</th>
                         <th class="text-center">{!! trans('lang_admin.tour.edit') !!}</th>
                         <th class="text-center">{!! trans('lang_admin.tour.delete') !!}</th>
                     </tr>
@@ -26,9 +23,6 @@
                         <tr>
                             <td>{!! $index++ !!}</td>
                             <td><a href="{{ route('admin.tour.show',$item ->id) }}">{{ $item->name }}</a></td>
-                            <td>{{ $item->price }}</td>
-                            <td>{{ $item->date_start }}</td>
-                            <td>{{ $item->date_end }}</td>
                             <td>
                                 <a href="{{ route('admin.tour.edit',$item ->id)}}"><button class="btn btn-info">{!!trans('lang_admin.tour.edit' )!!}</button></a>
                             </td>

@@ -9,6 +9,8 @@
 <script type="text/javascript">
 	var timeout = {!! json_encode(config('define.timeout')) !!};
 </script>
+<script type="text/javascript" src="{{ url('bower/ckeditor/ckeditor.js') }}"></script>
 <script type="text/javascript" src="{{ url('backend/js/admin.js') }}"></script>    
+
 
 @yield('script')
