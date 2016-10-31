@@ -61,11 +61,9 @@ class TourController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required',
-            'price' => 'required'
+            'name' => 'required'
         ], [
             'name.required' => 'Bạn phải nhập tên tour',
-            'price.required' => 'Bạn phải nhập giá cho tour'
         ]);
 
         if($validator->fails()){
@@ -77,7 +75,7 @@ class TourController extends Controller
         $place = Place::find($request->get('place'));
         $tour = new Tour();
         $tour->name = $request->get('name');
-        $tour->price = $request->get('price');
+        $tour->content = $request->get('content');
         $tour->meta_keywords = $request->get('meta-keywords');
         $tour->meta_description = $request->get('meta-descriptions');
         $place->tours()->save($tour);
@@ -122,19 +120,17 @@ class TourController extends Controller
     public function update(Request $request, $id)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required',
-            'price' => 'required'
+            'name' => 'required'
             //'meta-keywords' => 'required',
             //'meta-descriptions' => 'required'
         ], [
-            'name.required' => 'Bạn phải nhập tên tour',
-            'price.required' => 'Bạn phải nhập giá cho tour'
+            'name.required' => 'Bạn phải nhập tên tour'
             //'meta-keywords.required' => 'Bạn phải nhập SEO keywords cho tour',
             //'meta-décriptions.required' => 'Bạn phải nhập SEO descriptions cho tour'
         ]);
 
         if($validator->fails()){
-            return redirect('/admin/tour/create')
+            return redirect('/admin/tour/' . $id . '/edit')
                 ->withErrors($validator)
                 ->withInput();
         }

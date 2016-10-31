@@ -65,12 +65,12 @@
 					<div class="row">
 						<div class="col-md-3">
 							<div class="pull-right">
-								<label for="price">Giá Tour:</label>
+								<label for="content">Nhập nội dung cho tours:</label>
 							</div>
 						</div>
 						
 						<div class="col-md-6">
-							<input type="text" class="form-control" name="price" id="price" value="{{ old('price') }}">
+							<textarea name="content" rows="5" cols="73" id="content">{{ old('content') }}</textarea>
 						</div>
 					</div>
 				</div>
