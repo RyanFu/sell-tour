@@ -1,6 +1,6 @@
 @extends('backend.layouts.master')
 
-@section('title', trans('lang_admin.hotel.title_edit_hotel'))
+@section('title', trans('lang_admin.hotel.title_manage_hotel'))
 @section('header')
    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="{{ asset('bower/bootstrap-star-rating/css/star-rating.css') }}">		

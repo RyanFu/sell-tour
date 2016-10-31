@@ -108,16 +108,14 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          @if(Auth::check())
-            @if(isset(Auth::user()->avata))
+          @if(!isset(Auth::user()->avatar))
               <img src="{{ url('backend/image/avatar/'.Auth::user()->avatar) }}" class="img-circle" alt="User Image">
-            @endif
           @else
               <img src="{{ url('bower/AdminLTE/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
           @endif
         </div>
         <div class="pull-left info">
-          <p>{{  Auth::check() ? Auth::user()->name : 'Viet' }}</p>
+          <p>{{  Auth::user()->name }}</p>
           <a href="#"><i class="fa fa-circle text-success"></i> {{ trans('lang_admin.online') }}</a>
         </div>
       </div>
@@ -163,6 +161,7 @@
             </span>
           </a>
         </li>
+        <li>
           <a href="pages/mailbox/mailbox.html">
             <i class="fa fa-envelope"></i> <span>Contact</span>
             <span class="pull-right-container">
