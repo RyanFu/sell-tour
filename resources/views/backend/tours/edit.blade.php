@@ -8,8 +8,9 @@
 	<h2 class="text-left">&nbsp;{{trans('lang_admin.tour.add_tour')}}</h2><br>
     <div class="box box-success">
     	<div class="mg-top-20px">
-	    	<form action="{{ route('admin.tour.store') }}" method="post">
+	    	<form action="{{ route('admin.tour.update',$tour->id) }}" method="post">
 	    		{{ csrf_field() }}
+	    		{{ method_field('PUT') }}
 				<div class="form-group">
 					<div class="row">
 						<div class="col-md-3">
@@ -20,6 +21,7 @@
 						
 						<div class="col-md-6">
 							<select name="category" id="category" class="form-control">
+								<option value="">Chọn tất cả</option>
 								@foreach($categories as $category)
 									<option value="{{ $category->id }}" {!! old('category') === $category->id ? 'selected=selected' : '' !!}>{{ $category->name }}</option>
 		    					@endforeach
@@ -50,12 +52,12 @@
 					<div class="row">
 						<div class="col-md-3">
 							<div class="pull-right">
-								<label for="name">Tên Tour:</label>
+								<label for="content">Nhập nội dung cho tours:</label>
 							</div>
 						</div>
 						
 						<div class="col-md-6">
-							<input type="text" class="form-control" name="name"	id="name" value="{{ old('name') }}">
+							<textarea name="content" rows="5" cols="73" id="content">{{ old('content', $tour->content) }}</textarea>
 						</div>
 					</div>
 				</div>
@@ -64,12 +66,12 @@
 					<div class="row">
 						<div class="col-md-3">
 							<div class="pull-right">
-								<label for="price">Giá Tour:</label>
+								<label for="name">Tên Tour:</label>
 							</div>
 						</div>
 						
 						<div class="col-md-6">
-							<input type="text" class="form-control" name="price" id="price" value="{{ old('price') }}">
+							<input type="text" class="form-control" name="name"	id="name" value="{{ old('name', $tour->name) }}">
 						</div>
 					</div>
 				</div>
@@ -83,7 +85,7 @@
 						</div>
 						
 						<div class="col-md-6">
-							<textarea name="meta-keywords" rows="5" cols="73">{{ old('meta-keywords') }}</textarea>
+							<textarea name="meta-keywords" rows="5" cols="73">{{ old('meta-keywords', $tour->meta_keywords) }}</textarea>
 						</div>
 					</div>
 				</div>
@@ -97,7 +99,7 @@
 						</div>
 						
 						<div class="col-md-6">
-							<textarea name="meta-descriptions" rows="5" cols="73">{{ old('meta-descriptions') }}</textarea>
+							<textarea name="meta-descriptions" rows="5" cols="73">{{ old('meta-descriptions', $tour->meta_description) }}</textarea>
 						</div>
 					</div>
 				</div>

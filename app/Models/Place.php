@@ -12,7 +12,7 @@ class Place extends Model implements Transformable
 
     protected $table = 'places';
     public function tours(){
-    	return $this->hasMany('App\Models\Tour');
+    	return $this->hasMany('App\Models\Tour', 'place_id');
     }
 
     public function hotels(){

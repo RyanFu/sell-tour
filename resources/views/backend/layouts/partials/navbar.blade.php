@@ -54,14 +54,14 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <!-- Avatar -->
-              <span class="hidden-xs">{{ Auth::user()->name}}</span>
+              <span class="hidden-xs">{{ Auth::check() ? Auth::user()->name : 'Viet'}}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
                 <!-- Avatar -->
                 <p>
-                  {{  Auth::user()->name }} {{ trans('lang_admin.developer') }}
+                  {{  Auth::check() ? Auth::user()->name : 'Viet' }} {{ trans('lang_admin.developer') }}
                   <small>{{ trans('lang_admin.member_signin') }}</small>
                 </p>
               </li>
@@ -108,14 +108,16 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          @if(isset(Auth::user()->avata))
-            <img src="{{ url('backend/image/avatar/'.Auth::user()->avatar) }}" class="img-circle" alt="User Image">
+          @if(Auth::check())
+            @if(isset(Auth::user()->avata))
+              <img src="{{ url('backend/image/avatar/'.Auth::user()->avatar) }}" class="img-circle" alt="User Image">
+            @endif
           @else
-            <img src="{{ url('bower/AdminLTE/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
+              <img src="{{ url('bower/AdminLTE/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
           @endif
         </div>
         <div class="pull-left info">
-          <p>{{  Auth::user()->name }}</p>
+          <p>{{  Auth::check() ? Auth::user()->name : 'Viet' }}</p>
           <a href="#"><i class="fa fa-circle text-success"></i> {{ trans('lang_admin.online') }}</a>
         </div>
       </div>

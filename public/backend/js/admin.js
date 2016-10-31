@@ -22,5 +22,17 @@ $(document).ready(function(){
   }); 
   //countdown shutdown alert
   $("div.alert").delay(timeout).slideUp();
+  
+  //ckeditor content
+  CKEDITOR.replace( 'content', {
+      language: 'vi',
+      height: 300,
+
+      // Configure your file manager integration. This example uses CKFinder 3 for PHP.
+      filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+      filebrowserImageBrowseUrl: '/ckfinder/ckfinder.html?type=Images',
+      filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+      filebrowserImageUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images'
+    });
 
 });
