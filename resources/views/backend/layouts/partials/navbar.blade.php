@@ -161,6 +161,7 @@
             </span>
           </a>
         </li>
+        <li>
           <a href="pages/mailbox/mailbox.html">
             <i class="fa fa-envelope"></i> <span>Contact</span>
             <span class="pull-right-container">

@@ -14,7 +14,7 @@ class Hotel extends Model implements Transformable
     use Sluggable;
 	protected $table = 'hotels';
     protected $fillable = [
-        'place_id' ,'name', 'price', 'address', 'rating', 'lat', 'lng',
+        'place_id' ,'name', 'price', 'address', 'rating', 'lat', 'lng', 'slug', 'meta_description', 'meta_keywords',
     ];
     public function place(){
     	return $this->belongsTo('App\Models\Place');
