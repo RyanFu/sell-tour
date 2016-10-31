@@ -84,7 +84,7 @@
 						</div>
 						
 						<div class="col-md-6">
-							<textarea type="text" class="form-control" name="description" id="description" rows="2" cols="30" style="resize: none;">{{ old('description') }}</textarea>
+							<textarea type="text" class="form-control" name="description" id="content" rows="2" cols="30" style="resize: none;">{{ old('description') }}</textarea>
 						</div>
 					</div>
 				</div>
