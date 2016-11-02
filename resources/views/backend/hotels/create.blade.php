@@ -1,6 +1,6 @@
 @extends('backend.layouts.master')
 
-@section('title', trans('admin_manager_food.title_add_tour'))
+@section('title', trans('admin_manager_food.title_manage_hotel'))
 @section('header')
    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="{{ asset('bower/bootstrap-star-rating/css/star-rating.css') }}">		
@@ -9,7 +9,7 @@
 	<script type="text/javascript" src="{{ asset('bower/bootstrap-star-rating/js/star-rating.js') }}" ></script>
 @endsection
 @section('content')
-	<h2 class="text-left">&nbsp;{{trans('lang_admin.tour.add_tour')}}</h2><br>
+	<h2 class="text-left">&nbsp;{{trans('lang_admin.hotel.add_hotel')}}</h2><br>
     <div class="box box-success">
     	<div class="mg-top-20px">
 	    	<form action="{{ route('admin.hotel.store') }}" method="post">
