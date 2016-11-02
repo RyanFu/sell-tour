@@ -13,6 +13,9 @@ class Food extends Model implements Transformable
 
     use Sluggable;
 	protected $table = 'foods';
+    protected $fillable = [
+        'place_id' ,'name', 'price', 'address', 'description', 'rating', 'lat', 'lng', 'slug', 'meta_description', 'meta_keywords',
+    ];
     public function places()
     {
         return $this->morphToMany('App\Models\Place', 'placeable');
