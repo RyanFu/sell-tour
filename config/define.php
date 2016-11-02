@@ -1,10 +1,10 @@
 <?php
 return [
 	'timeout'  => '3000',
-	'filebrowserBrowseUrl' => asset("/backend/js/kcfinder/browse.php?type=files"),
-	'filebrowserImageBrowseUrl' => asset("/backend/js/kcfinder/browse.php?type=images"),
-	'filebrowserFlashBrowseUrl' => asset("/backend/js/kcfinder/browse.php?type=flash")
-	'filebrowserUploadUrl' => asset("/backend/js/kcfinder/upload.php?type=files"),
-	'filebrowserImageUploadUrl' => asset("/backend/js/kcfinder/upload.php?type=images"),
-	'filebrowserFlashUploadUrl' => asset("/backend/js/kcfinder/upload.php?type=flash")
+	'filebrowserBrowseUrl' => "/backend/js/kcfinder/browse.php?type=files",
+	'filebrowserImageBrowseUrl' => "/backend/js/kcfinder/browse.php?type=images",
+	'filebrowserFlashBrowseUrl' => "/backend/js/kcfinder/browse.php?type=flash",
+	'filebrowserUploadUrl' => "/backend/js/kcfinder/upload.php?type=files",
+	'filebrowserImageUploadUrl' => "/backend/js/kcfinder/upload.php?type=images",
+	'filebrowserFlashUploadUrl' => "/backend/js/kcfinder/upload.php?type=flash"
 ];

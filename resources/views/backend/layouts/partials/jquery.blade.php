@@ -9,12 +9,12 @@
 <script type="text/javascript">
 	var timeout = {!! json_encode(config('define.timeout')) !!};
 
-	var filebrowserBrowseUrl = {!! json_encode(config('define.filebrowserBrowseUrl')) !!};
-	  var filebrowserImageBrowseUrl = {!! json_encode(config('define.filebrowserImageBrowseUrl')) !!};
-	  var filebrowserFlashBrowseUrl = {!! json_encode(config('define.filebrowserFlashBrowseUrl')) !!};
-	  var filebrowserUploadUrl = {!! json_encode(config('define.filebrowserUploadUrl')) !!};
-	  var filebrowserImageUploadUrl = {!! json_encode(config('define.filebrowserImageUploadUrl')) !!};
-	  var filebrowserFlashUploadUrl = {!! json_encode(config('define.filebrowserFlashUploadUrl')) !!};
+	var filebrowserBrowseUrl = "{!! url(config('define.filebrowserBrowseUrl')) !!}";
+	  var filebrowserImageBrowseUrl = "{!! url(config('define.filebrowserImageBrowseUrl')) !!}";
+	  var filebrowserFlashBrowseUrl = "{!! url(config('define.filebrowserFlashBrowseUrl')) !!}";
+	  var filebrowserUploadUrl = "{!! url(config('define.filebrowserUploadUrl')) !!}";
+	  var filebrowserImageUploadUrl = "{!! url(config('define.filebrowserImageUploadUrl')) !!}";
+	  var filebrowserFlashUploadUrl = "{!! url(config('define.filebrowserFlashUploadUrl')) !!}";
 </script>
 <script type="text/javascript" src="{{ url('bower/ckeditor/ckeditor.js') }}"></script>
 <script type="text/javascript" src="{{ url('backend/js/admin.js') }}"></script>    
