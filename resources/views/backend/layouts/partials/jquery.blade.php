@@ -8,8 +8,16 @@
 <script src="{{ url('backend/js/vendor.js') }}"></script>
 <script type="text/javascript">
 	var timeout = {!! json_encode(config('define.timeout')) !!};
+
+	var filebrowserBrowseUrl = "{!! url(config('define.filebrowserBrowseUrl')) !!}";
+	  var filebrowserImageBrowseUrl = "{!! url(config('define.filebrowserImageBrowseUrl')) !!}";
+	  var filebrowserFlashBrowseUrl = "{!! url(config('define.filebrowserFlashBrowseUrl')) !!}";
+	  var filebrowserUploadUrl = "{!! url(config('define.filebrowserUploadUrl')) !!}";
+	  var filebrowserImageUploadUrl = "{!! url(config('define.filebrowserImageUploadUrl')) !!}";
+	  var filebrowserFlashUploadUrl = "{!! url(config('define.filebrowserFlashUploadUrl')) !!}";
 </script>
 <script type="text/javascript" src="{{ url('bower/ckeditor/ckeditor.js') }}"></script>
 <script type="text/javascript" src="{{ url('backend/js/admin.js') }}"></script>    
+
 
 @yield('script')
