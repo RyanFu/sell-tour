@@ -13,7 +13,7 @@
 Route::get('login', ['as' => 'login', 'uses' => 'Backend\AuthController@getLogin']);
 Route::post('login', ['uses' => 'Backend\AuthController@postLogin']);
 Route::get('logout',['as' => 'logout', 'uses' => 'Backend\AuthController@getLogout']);
-Route::group(['prefix' => 'admin','namespace' => 'Backend' ], function () {
+Route::group(['prefix' => 'admin','namespace' => 'Backend', 'middleware' => 'auth' ], function () {
 	Route::resource('tour', 'TourController');
 	Route::resource('food', 'FoodController');
 	Route::resource('hotel', 'HotelController');
@@ -21,7 +21,4 @@ Route::group(['prefix' => 'admin','namespace' => 'Backend' ], function () {
 	Route::resource('rent', 'RentController');
 	Route::resource('news', 'NewsController');
 	Route::resource('user', 'UserController');
-});
-Route::get('/', function(){
-	return view('backend.layouts.master');
 });
